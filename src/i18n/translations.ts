@@ -5,7 +5,6 @@ export const translations = {
     nav: {
       services: "الخدمات",
       clients: "عملاؤنا",
-      audience: "لمن نخدم",
       why: "لماذا Mo7y",
       journey: "رحلتنا",
       contact: "تواصل",
@@ -18,7 +17,7 @@ export const translations = {
       tagline: "نُحيي مشروعك",
       taglineSub: "7 خدمات متكاملة — من الاستراتيجية للنمو",
       description:
-        "فريق صغير بخبرة +10 سنوات — نشتغل مع رواد الأعمال والشركات الناشئة والقائمة في السعودية.",
+        "فريق متكامل بخبرة +15 سنة — نشتغل مع رواد الأعمال والشركات الناشئة والقائمة في السعودية.",
       ctaPrimary: "احجز استشارتك",
       ctaSecondary: "استكشف الخدمات",
       scroll: "اكتشف المزيد",
@@ -29,16 +28,18 @@ export const translations = {
       subtitle: "أكثر من 200 عميل اختاروا Mo7y لبناء حضورهم الرقمي",
     },
     stats: [
-      { value: 10, suffix: "+", label: "سنوات خبرة" },
+      { value: 15, suffix: "+", label: "سنوات خبرة" },
       { value: 500, suffix: "+", label: "مشروع منجز" },
       { value: 200, suffix: "+", label: "عميل سعيد" },
       { value: 7, suffix: "", label: "خدمات متكاملة" },
     ],
     services: {
       badge: "خدماتنا",
-      title: "7 خدمات · مشروع واحد",
+      titleBefore: "فريق",
+      titleAfter: "يقدم 7 خدمات لخدمه مشروعك",
       subtitle:
-        "منظومة متكاملة تبدأ بالاستراتيجية وتنتهي بنتائج قابلة للقياس — مش خدمات منفصلة.",
+        "مرّر فوق أي خدمة لاستكشافها — اسحب الدائرة للتدوير",
+      dragHint: "اسحب للتدوير",
       cta: "مش متأكد أي خدمة تحتاج؟ احجز استشارة",
       studioLink: "عبر Mo7y Studio",
       items: [
@@ -94,36 +95,13 @@ export const translations = {
         },
       ],
     },
-    audience: {
-      badge: "لمن نخدم",
-      title: "مشروعك يناسبنا؟",
-      subtitle:
-        "نشتغل مع شرائح مختلفة — كل واحدة لها احتياجاتها، وكلها تستحق شريك يفهمها.",
-      items: [
-        {
-          title: "رواد الأعمال",
-          description:
-            "من الفكرة لبيزنس قائم بذاته — استشارة · استراتيجية · تنفيذ.",
-        },
-        {
-          title: "شركات ناشئة",
-          description: "موقع · هوية · تسويق أولى — كل اللي تحتاجه للانطلاق.",
-        },
-        {
-          title: "شركات قائمة",
-          description: "نمو · تحول رقمي · إعادة بناء الهوية — نتائج ملموسة.",
-        },
-        {
-          title: "البرسونال براند",
-          description:
-            "حضور مهني · ثقة · فرص — لرواد الأعمال والمديرين وصناع المحتوى.",
-        },
-        {
-          title: "مشاريع بفكرة",
-          description: "عندك فكرة ومحتاج مساعدة تسوّقها وتحوّلها لمشروع حقيقي.",
-        },
-      ],
-    },
+    audienceChips: [
+      "رواد الأعمال",
+      "شركات ناشئة",
+      "شركات قائمة",
+      "البرسونال براند",
+      "مشاريع بفكرة",
+    ],
     why: {
       badge: "لماذا Mo7y",
       title: "مش بس وكالة — شريك نمو",
@@ -201,7 +179,6 @@ export const translations = {
     nav: {
       services: "Services",
       clients: "Clients",
-      audience: "Who We Serve",
       why: "Why Mo7y",
       journey: "Our Process",
       contact: "Contact",
@@ -214,7 +191,7 @@ export const translations = {
       tagline: "We Revive Your Project",
       taglineSub: "7 integrated services — from strategy to growth",
       description:
-        "A lean team with 10+ years of experience — working with entrepreneurs, startups, and established businesses across Saudi Arabia.",
+        "A complete team with 15+ years of experience — working with entrepreneurs, startups, and established businesses across Saudi Arabia.",
       ctaPrimary: "Book a Consultation",
       ctaSecondary: "Explore Services",
       scroll: "Discover More",
@@ -225,16 +202,17 @@ export const translations = {
       subtitle: "200+ clients chose Mo7y to build their digital presence",
     },
     stats: [
-      { value: 10, suffix: "+", label: "Years Experience" },
+      { value: 15, suffix: "+", label: "Years Experience" },
       { value: 500, suffix: "+", label: "Projects Delivered" },
       { value: 200, suffix: "+", label: "Happy Clients" },
       { value: 7, suffix: "", label: "Integrated Services" },
     ],
     services: {
       badge: "Our Services",
-      title: "7 Services · One Vision",
-      subtitle:
-        "An integrated ecosystem from strategy to measurable results — not disconnected services.",
+      titleBefore: "",
+      titleAfter: "team offers 7 services for your project",
+      subtitle: "Hover any service to explore — drag the circle to rotate",
+      dragHint: "Drag to rotate",
       cta: "Not sure which service you need? Book a consultation",
       studioLink: "via Mo7y Studio",
       items: [
@@ -290,39 +268,13 @@ export const translations = {
         },
       ],
     },
-    audience: {
-      badge: "Who We Serve",
-      title: "Is Your Project a Fit?",
-      subtitle:
-        "We work with diverse segments — each with unique needs, all deserving a partner who understands.",
-      items: [
-        {
-          title: "Entrepreneurs",
-          description:
-            "From idea to self-sustaining business — consulting · strategy · execution.",
-        },
-        {
-          title: "Startups",
-          description:
-            "Website · identity · initial marketing — everything you need to launch.",
-        },
-        {
-          title: "Established Companies",
-          description:
-            "Growth · digital transformation · brand rebuild — tangible results.",
-        },
-        {
-          title: "Personal Brands",
-          description:
-            "Professional presence · trust · opportunities — for leaders and content creators.",
-        },
-        {
-          title: "Idea-Stage Projects",
-          description:
-            "You have an idea and need help marketing it and turning it into a real business.",
-        },
-      ],
-    },
+    audienceChips: [
+      "Entrepreneurs",
+      "Startups",
+      "Established Companies",
+      "Personal Brands",
+      "Idea-Stage Projects",
+    ],
     why: {
       badge: "Why Mo7y",
       title: "Not Just an Agency — A Growth Partner",

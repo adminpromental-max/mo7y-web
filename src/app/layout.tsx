@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
 import AppShell from "@/components/AppShell";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["700"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-manrope",
+const sakkalMajalla = localFont({
+  src: "../../public/fonts/sakkal-majalla.woff",
+  variable: "--font-sakkal",
   display: "swap",
 });
 
@@ -41,7 +33,7 @@ export default function RootLayout({
     <html
       lang="ar"
       dir="rtl"
-      className={`${spaceGrotesk.variable} ${manrope.variable} scroll-smooth`}
+      className={`${sakkalMajalla.variable} scroll-smooth`}
       suppressHydrationWarning
     >
       <body className="font-body antialiased bg-white text-foreground">

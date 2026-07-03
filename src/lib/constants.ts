@@ -36,3 +36,5 @@ export const COLORS = {
 
 export const LOGO_IMAGE = "/logo.svg";
 export const STUDIO_LOGO_IMAGE = "/mo7y-studio.svg";
+export const MO7Y_WORDMARK_IMAGE = "/mo7y-wordmark.svg";
+export const HERO_BG_IMAGE = "/hero-bg.png";
