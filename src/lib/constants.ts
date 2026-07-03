@@ -34,5 +34,5 @@ export const COLORS = {
   white: "#FFFFFF",
 } as const;
 
-export const LOGO_IMAGE = "/mo7y-logo.svg";
+export const LOGO_IMAGE = "/logo.svg";
 export const STUDIO_LOGO_IMAGE = "/mo7y-studio.svg";

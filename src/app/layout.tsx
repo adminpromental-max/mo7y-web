@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Manrope } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/constants";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import AppShell from "@/components/AppShell";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -43,11 +42,10 @@ export default function RootLayout({
       lang="ar"
       dir="rtl"
       className={`${spaceGrotesk.variable} ${manrope.variable} scroll-smooth`}
+      suppressHydrationWarning
     >
       <body className="font-body antialiased bg-white text-foreground">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

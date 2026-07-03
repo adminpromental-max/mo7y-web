@@ -3,54 +3,63 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import { SITE, STUDIO_LOGO_IMAGE } from "@/lib/constants";
+import { STUDIO_LOGO_IMAGE, SITE } from "@/lib/constants";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function StudioBanner() {
+  const { t, isRtl } = useLanguage();
+  const Arrow = isRtl ? "←" : "→";
+
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-[#1A1A2E] p-8 sm:p-12 lg:p-16"
+          transition={{ duration: 0.7 }}
+          className="relative overflow-hidden rounded-3xl noise-overlay"
         >
-          <div className="absolute top-0 right-0 w-80 h-80 bg-purple/20 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-60 h-60 bg-turquoise/10 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a14] via-[#12121f] to-[#1a1035]" />
+          <div className="absolute inset-0 grid-overlay opacity-20" />
+          <div className="glow-orb w-96 h-96 bg-purple/25 -top-20 -end-20" />
+          <div className="glow-orb w-64 h-64 bg-turquoise/15 -bottom-10 -start-10" />
 
-          <div className="relative grid lg:grid-cols-2 gap-10 items-center">
+          <div className="relative grid lg:grid-cols-2 gap-10 items-center p-8 sm:p-12 lg:p-16">
             <div>
-              <span className="inline-block px-3 py-1 rounded-full bg-turquoise/20 text-turquoise text-xs font-semibold tracking-label mb-4">
-                Mo7y Studio
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-turquoise text-xs font-semibold tracking-label mb-5 border border-turquoise/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-turquoise animate-pulse" />
+                {t.studio.badge}
               </span>
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-white mb-4">
-                تحتاج تصوير أو فيديو؟
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-white mb-5 leading-tight">
+                {t.studio.title}
               </h2>
-              <p className="text-white/70 leading-relaxed mb-6 max-w-md">
-                الإنتاج المرئي عبر{" "}
-                <strong className="text-white">Mo7y Studio</strong> — تصوير
-                فوتوغرافي · فيديو · مونتاج · موشن جرافيك. نفس الجودة · نفس
-                الفريق.
+              <p className="text-white/60 leading-relaxed mb-8 max-w-md">
+                {t.studio.description}
               </p>
               <Link
                 href={SITE.studioUrl}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-turquoise text-white font-semibold hover:bg-turquoise-light transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-turquoise to-turquoise-light text-white font-semibold hover:shadow-[0_8px_32px_rgba(6,182,212,0.4)] hover:-translate-y-0.5 transition-all"
               >
-                زور Mo7y Studio
-                <ArrowLeft className="w-4 h-4" />
+                {t.studio.cta} {Arrow}
               </Link>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
-              <Image
-                src={STUDIO_LOGO_IMAGE}
-                alt="Mo7y Studio"
-                width={280}
-                height={120}
-                className="w-full max-w-[280px] h-auto opacity-90"
-              />
-            </div>
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="flex justify-center lg:justify-end"
+            >
+              <div className="glass rounded-2xl p-8 border border-white/10">
+                <Image
+                  src={STUDIO_LOGO_IMAGE}
+                  alt="Mo7y Studio"
+                  width={300}
+                  height={120}
+                  className="w-full max-w-[300px] h-auto"
+                />
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
